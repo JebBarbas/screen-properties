@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Properties</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+
+    <style>
+        body {
+            min-height: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+
+            display: grid;
+            place-content: center;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="results"></div>
+
+    <script>
+        const results = `
+            <div class="mb-3">
+                <h1>Tamaño de Pantalla</h1>
+                <div>Width: ${innerWidth}</div>
+                <div>Height: ${innerHeight}</div>
+                <div>Pixel Ratio: ${devicePixelRatio}</div>
+            </div>
+
+            <div>
+                <h1>Datos del Navegador</h1>
+                <div>User Agent: ${navigator.userAgent}</div>
+            </div>
+        `
+
+        document.getElementById('results').insertAdjacentHTML('beforeend', results)
+
+        console.log(innerHeight, innerWidth, devicePixelRatio)
+    </script>
+</body>
+</html>
